@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="input-group">
+      <input [(ngModel)]="newTodoTitle" placeholder="New todo title" class="todo-input" />
+ <button (click)="addTodo()"
+              class="add-button">
+        {{ editingTodoId !== null ? 'Save Changes' : 'Add Todo' }}
+      </button>  </div>
+
+  <ul class="todo-list">
+      <li *ngFor="let todo of todos" class="todo-item">
+          <span class="todo-text">{{ todo.title }}</span>
+          <button (click)="edit(todo.id)" class="edit-button">Edit</button>
+          <button (click)="delete(todo.id)" class="delete-button">Delete</button>
+      </li>
+  </ul>
+</div>
